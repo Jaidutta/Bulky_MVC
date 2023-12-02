@@ -7,11 +7,21 @@
         </div>
         <div class="mb-3 p-1">
             <label class="p-0">Category Name</label>
-            <input type="text" class="form-control" />
+            <input asp-for="Name" class="form-control" />
+            @* asp-for tells the controller which field this input is for *@
+            @* If we have asp-for there is no need to define type *@
+            @* we have the same thing for label and the spacing or text can be changed with Data Annotation *@
         </div>
         <div class="mb-3 p-1">
+
+            @* <label class="p-0" asp-for="DisplayOrder"></label>  example shown for asp-for in label*@
             <label class="p-0">Display Order</label>
-            <input type="text" class="form-control" />
+            <input asp-for="DisplayOrder" class="form-control" />
+            @* asp-for tells the controller which field this input is for *@
+            @* If we have asp-for there is no need to define type *@
+            @* we have the same thing for label and the spacing or text can be changed with Data Annotation *@
+        </div>
+
         </div>
 
         <div class="row">
