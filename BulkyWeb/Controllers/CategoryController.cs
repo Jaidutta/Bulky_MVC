@@ -25,11 +25,22 @@ namespace BulkyWeb.Controllers
 
         [HttpPost]
         public IActionResult Create(Category obj)
-        {
+        {   
+            //Way to Implement Custom Validation
             if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("Name", "The Display Order cannot exactly match the Category Name");
             }
+
+            /*
+             Because we dont have any key for this AddModelError, it did not bind it to any field but to 
+             the validation summary
+            */
+            /* if (obj.Name.ToLower() == "test")
+             {
+                ModelState.AddModelError("", "Test is an invalid value");
+             }
+            */
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(obj);
